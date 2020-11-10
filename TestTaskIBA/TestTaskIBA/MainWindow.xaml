@@ -1,0 +1,29 @@
+﻿<Window x:Class="TestTaskIBA.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestTaskIBA"
+        mc:Ignorable="d"
+        Title="Информация о работниках" Height="500" Width="1000" Closing="MainWindow_Closing">
+    <StackPanel Orientation="Horizontal" Background="#0772A1">
+        <StackPanel HorizontalAlignment="Stretch" Background="#63AFD0">
+            <Button Content="Добавить запись" Name="Add_Button" Click="Add_Button_Click" Width="150" Height="30" Margin="0 10 0 0"/>
+            <Button Content="Удалить записи" Name="Delete_Button" Click="Delete_Button_Click" Width="150" Height="30"/>
+            <Button Content="Обновить запись" Name="Update_Button" Click="Update_Button_Click" Width="150" Height="30"/>
+            <Button Content="Экспорт данных" Name="Export_Button" Click="Export_Button_Click" IsEnabled="False" Width="150" Height="30"/>
+            <TextBlock TextAlignment ="Center" Text = "Загрузка данных (0 / 50000)" Margin="0 20 0 5" Name="LoadBarTextBlock"></TextBlock>
+            <ProgressBar Minimum="0" Maximum="500" Value="0" Height="20" Name="LoadBar"/>
+        </StackPanel>
+        <DataGrid AutoGenerateColumns="False" x:Name="EmployeesGrid" IsReadOnly="True" Height="300" VerticalAlignment="Top">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Date, StringFormat=d}" Header="Дата" />
+                <DataGridTextColumn Binding="{Binding FirstName}" Header="Имя"/>
+                <DataGridTextColumn Binding="{Binding LastName}" Header="Фамилия"/>
+                <DataGridTextColumn Binding="{Binding UserName}" Header="Username"/>
+                <DataGridTextColumn Binding="{Binding City}" Header="Город"/>
+                <DataGridTextColumn Binding="{Binding Country}" Header="Страна"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+</Window>

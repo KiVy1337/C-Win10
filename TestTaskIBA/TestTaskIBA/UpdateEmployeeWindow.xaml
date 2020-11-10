@@ -1,0 +1,24 @@
+﻿<Window x:Class="TestTaskIBA.UpdateEmployeeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestTaskIBA"
+        mc:Ignorable="d"
+        Title="Обновление данных о сотруднике" Height="500" Width="500" FontSize="25">
+    <StackPanel Background="#024A68">
+        <TextBlock TextAlignment ="Center" >Выберите Дату</TextBlock>
+        <DatePicker Name="DatePickerEmployee" SelectedDateFormat="Short" IsTodayHighlighted ="True" SelectedDate ="{Binding Date, StringFormat=d}"></DatePicker>
+        <TextBlock TextAlignment ="Center" >Напишите имя</TextBlock>
+        <TextBox Name="EmployeeFirstName" Text="{Binding FirstName}"></TextBox>
+        <TextBlock TextAlignment ="Center" >Напишите фамилию</TextBlock>
+        <TextBox Name="EmployeeLastName" Text="{Binding LastName}"></TextBox>
+        <TextBlock TextAlignment ="Center" >Username</TextBlock>
+        <TextBox Name="EmployeeUserName" Text="{Binding UserName}"></TextBox>
+        <TextBlock TextAlignment ="Center" >Напишите город</TextBlock>
+        <TextBox Name="EmployeeCity" Text="{Binding City}"></TextBox>
+        <TextBlock TextAlignment ="Center" >Напишите страну</TextBlock>
+        <TextBox Name="EmployeeCountry" Text="{Binding Country}"></TextBox>
+        <Button Name="UpdateButton" Grid.Column ="0" Click="UpdateButton_Click" IsDefault="True">Назад</Button>
+    </StackPanel>
+</Window>
